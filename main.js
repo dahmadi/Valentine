@@ -30,6 +30,8 @@ function App() {
     height: "100vh",
     textAlign: "center",
     fontFamily: "'Edu NSW ACT Cursive', cursive",
+    position: "relative",
+    zIndex: 1
   };
 
   const yesStyle = {
@@ -41,7 +43,8 @@ function App() {
     border: "none",
     borderRadius: "8px",
     cursor: "pointer",
-    fontFamily: "inherit"
+    fontFamily: "inherit",
+    transition: "transform 0.2s ease"
   };
 
   const noStyle = {
@@ -56,55 +59,17 @@ function App() {
     fontFamily: "inherit"
   };
 
-  if (isValentine) {
-    return React.createElement(
-      "div",
-      { style: containerStyle },
-      React.createElement("img", { src: secondImg, alt: "kisses" }),
-      React.createElement(
-        "div",
-        {
-          style: {
-            fontSize: "64px",
-            color: "#ff69b4",
-            fontWeight: "700",
-            marginTop: "20px"
-          }
-        },
-        "Yay!!! 💖"
-      )
-    );
-  }
+  const handleYes = () => {
+    setIsValentine(true);
 
-  const noText =
-    noClicks === 0
-      ? "No"
-      : NO_PHRASES[Math.min(noClicks - 1, NO_PHRASES.length - 1)];
+    // Confetti explosion
+    if (window.confetti) {
+      window.confetti({
+        particleCount: 200,
+        spread: 100,
+        origin: { y: 0.6 }
+      });
+    }
+  };
 
-  return React.createElement(
-    "div",
-    { style: containerStyle },
-    React.createElement("img", { src: firstImg, alt: "bear" }),
-    React.createElement(
-      "h1",
-      { style: { fontSize: "42px", marginTop: "20px" } },
-      "Will you be my Valentine?"
-    ),
-    React.createElement(
-      "div",
-      null,
-      React.createElement(
-        "button",
-        { onClick: () => setIsValentine(true), style: yesStyle },
-        "Yes"
-      ),
-      React.createElement(
-        "button",
-        { onClick: () => setNoClicks((p) => p + 1), style: noStyle },
-        noText
-      )
-    )
-  );
-}
-
-createRoot(document.getElementById("root")).render(React.createElement(App));
+  const no
