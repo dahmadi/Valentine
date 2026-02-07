@@ -15,7 +15,7 @@ const NO_PHRASES = [
 const firstImg =
   "https://media.tenor.com/VIChDQ6ejRQAAAAj/jumping-bear-hearts-no-png.gif";
 const secondImg =
-  "https://tenor.com/view/milk-and-mocha-milk-and-mocha-bear-milk-and-mocha-kiss-gif-500068033483484344";
+  "https://media.tenor.com/BvCZOhtPrLgAAAAi/milk-and-mocha-milk-and-mocha-bear.gif";
 
 function App() {
   const [noClicks, setNoClicks] = useState(0);
@@ -29,7 +29,7 @@ function App() {
     justifyContent: "center",
     height: "100vh",
     textAlign: "center",
-    fontFamily: "Arial, sans-serif",
+    fontFamily: "'Edu NSW ACT Cursive', cursive",
   };
 
   const yesStyle = {
@@ -39,8 +39,9 @@ function App() {
     backgroundColor: "green",
     color: "white",
     border: "none",
-    borderRadius: "5px",
+    borderRadius: "8px",
     cursor: "pointer",
+    fontFamily: "inherit"
   };
 
   const noStyle = {
@@ -50,8 +51,9 @@ function App() {
     backgroundColor: "red",
     color: "white",
     border: "none",
-    borderRadius: "5px",
+    borderRadius: "8px",
     cursor: "pointer",
+    fontFamily: "inherit"
   };
 
   if (isValentine) {
@@ -61,8 +63,15 @@ function App() {
       React.createElement("img", { src: secondImg, alt: "kisses" }),
       React.createElement(
         "div",
-        { style: { fontSize: "48px", color: "pink", fontWeight: "bold" } },
-        "Yay!!!"
+        {
+          style: {
+            fontSize: "64px",
+            color: "#ff69b4",
+            fontWeight: "700",
+            marginTop: "20px"
+          }
+        },
+        "Yay!!! 💖"
       )
     );
   }
@@ -76,7 +85,11 @@ function App() {
     "div",
     { style: containerStyle },
     React.createElement("img", { src: firstImg, alt: "bear" }),
-    React.createElement("h1", null, "Will you be my Valentine?"),
+    React.createElement(
+      "h1",
+      { style: { fontSize: "42px", marginTop: "20px" } },
+      "Will you be my Valentine?"
+    ),
     React.createElement(
       "div",
       null,
