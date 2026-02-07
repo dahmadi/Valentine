@@ -43,8 +43,7 @@ function App() {
     border: "none",
     borderRadius: "8px",
     cursor: "pointer",
-    fontFamily: "inherit",
-    transition: "transform 0.2s ease"
+    fontFamily: "inherit"
   };
 
   const noStyle = {
@@ -72,4 +71,55 @@ function App() {
     }
   };
 
-  const no
+  const noText =
+    noClicks === 0
+      ? "No"
+      : NO_PHRASES[Math.min(noClicks - 1, NO_PHRASES.length - 1)];
+
+  if (isValentine) {
+    return React.createElement(
+      "div",
+      { style: containerStyle },
+      React.createElement("img", { src: secondImg, alt: "kisses" }),
+      React.createElement(
+        "div",
+        {
+          style: {
+            fontSize: "64px",
+            color: "#ff69b4",
+            fontWeight: "700",
+            marginTop: "20px"
+          }
+        },
+        "Yay!!! 💖"
+      )
+    );
+  }
+
+  return React.createElement(
+    "div",
+    { style: containerStyle },
+    React.createElement("img", { src: firstImg, alt: "bear" }),
+    React.createElement(
+      "h1",
+      { style: { fontSize: "42px", marginTop: "20px" } },
+      "Will you be my Valentine?"
+    ),
+    React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "button",
+        { onClick: handleYes, style: yesStyle },
+        "Yes"
+      ),
+      React.createElement(
+        "button",
+        { onClick: () => setNoClicks((p) => p + 1), style: noStyle },
+        noText
+      )
+    )
+  );
+}
+
+createRoot(document.getElementById("root")).render(React.createElement(App));
