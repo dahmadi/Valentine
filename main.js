@@ -16,12 +16,14 @@ const NO_PHRASES = [
 
 const firstImg =
   "https://media.tenor.com/VIChDQ6ejRQAAAAj/jumping-bear-hearts-no-png.gif";
+
 const secondImg =
   "https://media.tenor.com/BvCZOhtPrLgAAAAi/milk-and-mocha-milk-and-mocha-bear.gif";
 
 function App() {
   const [noClicks, setNoClicks] = useState(0);
   const [isValentine, setIsValentine] = useState(false);
+
   const yesButtonSize = noClicks * 20 + 16;
 
   const containerStyle = {
@@ -44,8 +46,7 @@ function App() {
     color: "white",
     border: "none",
     borderRadius: "8px",
-    cursor: "pointer",
-    fontFamily: "inherit"
+    cursor: "pointer"
   };
 
   const noStyle = {
@@ -56,14 +57,12 @@ function App() {
     color: "white",
     border: "none",
     borderRadius: "8px",
-    cursor: "pointer",
-    fontFamily: "inherit"
+    cursor: "pointer"
   };
 
   const handleYes = () => {
     setIsValentine(true);
 
-    // Confetti explosion
     if (window.confetti) {
       window.confetti({
         particleCount: 200,
@@ -124,4 +123,6 @@ function App() {
   );
 }
 
-createRoot(document.getElementById("root")).render(React.createElement(App));
+createRoot(document.getElementById("root")).render(
+  React.createElement(App)
+);
