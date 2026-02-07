@@ -15,7 +15,7 @@ const NO_PHRASES = [
 const firstImg =
   "https://media.tenor.com/VIChDQ6ejRQAAAAj/jumping-bear-hearts-no-png.gif";
 const secondImg =
-  "https://media.tenor.com/f1xnRxTRxLAAAAAj/bears-with-kisses-bg.gif";
+  "https://tenor.com/view/milk-and-mocha-milk-and-mocha-bear-milk-and-mocha-kiss-gif-500068033483484344";
 
 function App() {
   const [noClicks, setNoClicks] = useState(0);
