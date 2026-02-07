@@ -72,10 +72,9 @@ function App() {
     }
   };
 
-  const noText =
-    noClicks === 0
-      ? "No"
-      : NO_PHRASES[Math.min(noClicks - 1, NO_PHRASES.length - 1)];
+  const noText = (noClicks === 0)
+  ? "No"
+  : NO_PHRASES[Math.min(noClicks - 1, NO_PHRASES.length - 1)];
 
   if (isValentine) {
     return React.createElement(
