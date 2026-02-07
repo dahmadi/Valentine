@@ -51,4 +51,33 @@
   </head>
 
   <body>
-    <d
+    <div class="hearts"></div>
+    <div id="root"></div>
+
+    <!-- Confetti library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <!-- Your React app -->
+    <script type="module" src="./main.js"></script>
+
+    <!-- Floating hearts generator -->
+    <script>
+      const heartsContainer = document.querySelector(".hearts");
+
+      function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "💖";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = 5 + Math.random() * 5 + "s";
+        heartsContainer.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 10000);
+      }
+
+      setInterval(createHeart, 500);
+    </script>
+  </body>
+</html>
