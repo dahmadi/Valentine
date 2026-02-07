@@ -1,7 +1,7 @@
-console.log("main.js loaded ✅");
-
 import React, { useState } from "https://esm.sh/react@18.2.0";
 import { createRoot } from "https://esm.sh/react-dom@18.2.0/client";
+
+console.log("main.js loaded ✅");
 
 const NO_PHRASES = [
   "No 💔",
