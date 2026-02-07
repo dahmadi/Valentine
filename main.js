@@ -9,6 +9,7 @@ const NO_PHRASES = [
   "Don't break my heart :(",
   "What about a maybe?",
   "Please don't do this to me, I'm sensitive",
+  "Jail"
 ];
 
 const firstImg =
@@ -61,7 +62,7 @@ function App() {
       React.createElement(
         "div",
         { style: { fontSize: "48px", color: "pink", fontWeight: "bold" } },
-        "Yay!!! 💖🎉"
+        "Yay!!!"
       )
     );
   }
@@ -75,7 +76,7 @@ function App() {
     "div",
     { style: containerStyle },
     React.createElement("img", { src: firstImg, alt: "bear" }),
-    React.createElement("h1", null, "Will you be my Valentine? 💘"),
+    React.createElement("h1", null, "Will you be my Valentine?"),
     React.createElement(
       "div",
       null,
