@@ -8,7 +8,7 @@ const NO_PHRASES = [
   "One more chance, pookie?",
   "Don't break my heart :(",
   "What about a maybe?",
-  "Please don't do this to me, I'm fragile",
+  "Please don't do this to me, I'm sensitive",
 ];
 
 function App() {
